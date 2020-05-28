@@ -1,5 +1,6 @@
 #pragma once
 #include <Windows.h>
+#include "direct3D.h"
 
 // Global variables.
 const bool FULL_SCREEN = false;
@@ -20,5 +21,8 @@ public:
 
 private:
 	bool Render();
+
+private:
+	Direct3D* direct3D_;
 };
 

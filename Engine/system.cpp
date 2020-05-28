@@ -36,10 +36,8 @@ bool System::Initialize()
 	if (!graphics_)
 		return false;
 
-	// Initialize the Graphics object and return its 
-	bool result = graphics_->Initialize(screen_width, screen_height, window_);
-
-	return result;
+	// Initialize the Graphics object and return its result.
+	return graphics_->Initialize(screen_width, screen_height, window_);
 }
 
 void System::Shutdown()
@@ -245,7 +243,7 @@ LRESULT CALLBACK WndProc(HWND window, UINT message, WPARAM wparam, LPARAM lparam
 		PostQuitMessage(0);
 		return 0;
 
-	// All other messages apss to the message handler within the System class.
+	// All other messages pass to the message handler within the System class.
 	default:
 		return ApplicationHandle->MessageHandler(window, message, wparam, lparam);
 	}
